@@ -57,5 +57,14 @@ function printSongDetails(song: Song): void {
 }
 
 const earnings = calculateEarnings(song);
-console.log("🚀 ~ file: objects.ts ~ line 60 ~ earnings", earnings)
+console.log('🚀 ~ file: objects.ts ~ line 60 ~ earnings', earnings);
 printSongDetails(song);
+
+type Point3d = {
+    x: number;
+    y: number;
+    z?: number;
+};
+
+const my3dPoint: Point3d = { x: 1, y: 2 };
+const my3dPoint2: Point3d = { x: 1, y: 2, z: 3 };

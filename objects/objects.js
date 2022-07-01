@@ -36,5 +36,7 @@ function printSongDetails(song) {
     console.log("Written by ".concat(song.credits.songwriter));
 }
 var earnings = calculateEarnings(song);
-console.log("🚀 ~ file: objects.ts ~ line 60 ~ earnings", earnings);
+console.log('🚀 ~ file: objects.ts ~ line 60 ~ earnings', earnings);
 printSongDetails(song);
+var my3dPoint = { x: 1, y: 2 };
+var my3dPoint2 = { x: 1, y: 2, z: 3 };

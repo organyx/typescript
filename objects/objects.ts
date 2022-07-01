@@ -26,3 +26,36 @@ type Point = { x: number; y: number };
 function doublePoint(point: Point): Point {
     return { x: point.x * 2, y: point.y * 2 };
 }
+
+type Song = {
+    title: string;
+    artist: string;
+    numberOfPlays: number;
+    credits: {
+        producer: string;
+        songwriter: string;
+    };
+};
+
+const song: Song = {
+    title: 'The Show Must Go On',
+    artist: 'The Rolling Stones',
+    numberOfPlays: 5,
+    credits: {
+        producer: 'Bob',
+        songwriter: 'Sid'
+    }
+};
+function calculateEarnings(song: Song): number {
+    return 0.0033 * song.numberOfPlays;
+}
+
+function printSongDetails(song: Song): void {
+    console.log(`${song.title} by ${song.artist}`);
+    console.log(`Produced by ${song.credits.producer}`);
+    console.log(`Written by ${song.credits.songwriter}`);
+}
+
+const earnings = calculateEarnings(song);
+console.log("🚀 ~ file: objects.ts ~ line 60 ~ earnings", earnings)
+printSongDetails(song);

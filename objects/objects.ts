@@ -77,3 +77,35 @@ type User = {
 const user1: User = { id: 1, name: 'Bob' };
 
 // user1.id = 3;
+
+type Circle = {
+    radius: number;
+};
+
+type Color = {
+    color: string;
+};
+
+type ColorCircle = Circle & Color;
+
+const happyCircle: ColorCircle = { radius: 1, color: 'red' };
+// const sadCircle: ColorCircle = { radius: 1 };
+
+type Cat = {
+    numLives: number;
+};
+
+type Dog = {
+    breed: string;
+};
+
+type CatDog = Cat &
+    Dog & {
+        age: number;
+    };
+
+const catDog: CatDog = {
+    numLives: 9,
+    breed: 'Labrador',
+    age: 3
+};

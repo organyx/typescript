@@ -41,4 +41,9 @@ printSongDetails(song);
 var my3dPoint = { x: 1, y: 2 };
 var my3dPoint2 = { x: 1, y: 2, z: 3 };
 var user1 = { id: 1, name: 'Bob' };
-// user1.id = 3;
+var happyCircle = { radius: 1, color: 'red' };
+var catDog = {
+    numLives: 9,
+    breed: 'Labrador',
+    age: 3
+};

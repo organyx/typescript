@@ -68,3 +68,12 @@ type Point3d = {
 
 const my3dPoint: Point3d = { x: 1, y: 2 };
 const my3dPoint2: Point3d = { x: 1, y: 2, z: 3 };
+
+type User = {
+    readonly id: number;
+    name: string;
+};
+
+const user1: User = { id: 1, name: 'Bob' };
+
+// user1.id = 3;

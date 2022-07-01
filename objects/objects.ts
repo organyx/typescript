@@ -20,3 +20,9 @@ function randomCoordinate(): { x: number; y: number } {
 // printName({ name: 'Tom', breed: 'Labrador', age: 2 }); // Error
 const doggo = { name: 'Tom', breed: 'Lab', age: 3 };
 printName(doggo);
+
+type Point = { x: number; y: number };
+
+function doublePoint(point: Point): Point {
+    return { x: point.x * 2, y: point.y * 2 };
+}

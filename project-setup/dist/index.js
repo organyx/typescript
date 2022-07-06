@@ -10,10 +10,18 @@ const input = document.querySelector('#my-input');
 // });
 const form = document.querySelector('#my-form');
 const list = document.querySelector('#my-list');
+const saveTodos = () => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+};
 const createTodo = (todo) => {
     const newLi = document.createElement('li');
     const newCheckbox = document.createElement('input');
     newCheckbox.type = 'checkbox';
+    newCheckbox.checked = todo.completed;
+    newCheckbox.addEventListener('change', () => {
+        todo.completed = newCheckbox.checked;
+        saveTodos();
+    });
     newLi.append(todo.text);
     newLi.append(newCheckbox);
     list.append(newLi);
@@ -36,7 +44,8 @@ const handleSubmit = (event) => {
     };
     todos.push(newTodo);
     createTodo(newTodo);
-    localStorage.setItem('todos', JSON.stringify(todos));
+    // localStorage.setItem('todos', JSON.stringify(todos));
+    saveTodos();
     input.value = '';
 };
 form.addEventListener('submit', handleSubmit);

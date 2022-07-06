@@ -9,8 +9,14 @@ const input = document.querySelector('#my-input');
 //     console.log('🚀 ~ file: index.ts ~ line 5 ~ btn');
 // });
 const form = document.querySelector('#my-form');
+const list = document.querySelector('#my-list');
 const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Hi there!');
+    const newTodoText = input.value;
+    const newLi = document.createElement('li');
+    newLi.append(newTodoText);
+    list.append(newLi);
+    input.value = '';
 };
 form.addEventListener('submit', handleSubmit);

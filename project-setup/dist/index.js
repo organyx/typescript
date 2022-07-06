@@ -10,13 +10,24 @@ const input = document.querySelector('#my-input');
 // });
 const form = document.querySelector('#my-form');
 const list = document.querySelector('#my-list');
+const todos = [];
 const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Hi there!');
-    const newTodoText = input.value;
-    const newLi = document.createElement('li');
-    newLi.append(newTodoText);
-    list.append(newLi);
+    const newTodo = {
+        text: input.value,
+        completed: false
+    };
+    todos.push(newTodo);
+    createTodo(newTodo);
     input.value = '';
+};
+const createTodo = (todo) => {
+    const newLi = document.createElement('li');
+    const newCheckbox = document.createElement('input');
+    newCheckbox.type = 'checkbox';
+    newLi.append(todo.text);
+    newLi.append(newCheckbox);
+    list.append(newLi);
 };
 form.addEventListener('submit', handleSubmit);

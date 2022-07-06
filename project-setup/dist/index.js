@@ -10,7 +10,23 @@ const input = document.querySelector('#my-input');
 // });
 const form = document.querySelector('#my-form');
 const list = document.querySelector('#my-list');
-const todos = [];
+const createTodo = (todo) => {
+    const newLi = document.createElement('li');
+    const newCheckbox = document.createElement('input');
+    newCheckbox.type = 'checkbox';
+    newLi.append(todo.text);
+    newLi.append(newCheckbox);
+    list.append(newLi);
+};
+const getTodos = () => {
+    const todosJson = localStorage.getItem('todos');
+    if (todosJson === null) {
+        return [];
+    }
+    return JSON.parse(todosJson);
+};
+const todos = getTodos();
+todos.forEach(createTodo);
 const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Hi there!');
@@ -20,14 +36,7 @@ const handleSubmit = (event) => {
     };
     todos.push(newTodo);
     createTodo(newTodo);
+    localStorage.setItem('todos', JSON.stringify(todos));
     input.value = '';
-};
-const createTodo = (todo) => {
-    const newLi = document.createElement('li');
-    const newCheckbox = document.createElement('input');
-    newCheckbox.type = 'checkbox';
-    newLi.append(todo.text);
-    newLi.append(newCheckbox);
-    list.append(newLi);
 };
 form.addEventListener('submit', handleSubmit);

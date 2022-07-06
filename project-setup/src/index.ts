@@ -18,7 +18,25 @@ interface Todo {
     completed: boolean;
 }
 
-const todos: Todo[] = [];
+const createTodo = (todo: Todo) => {
+    const newLi = document.createElement('li');
+    const newCheckbox = document.createElement('input');
+    newCheckbox.type = 'checkbox';
+    newLi.append(todo.text);
+    newLi.append(newCheckbox);
+    list.append(newLi);
+};
+
+const getTodos = (): Todo[] => {
+    const todosJson = localStorage.getItem('todos');
+    if (todosJson === null) {
+        return [];
+    }
+    return JSON.parse(todosJson);
+};
+
+const todos: Todo[] = getTodos();
+todos.forEach(createTodo);
 
 const handleSubmit = (event: SubmitEvent) => {
     event.preventDefault();
@@ -33,16 +51,9 @@ const handleSubmit = (event: SubmitEvent) => {
 
     createTodo(newTodo);
 
-    input.value = '';
-};
+    localStorage.setItem('todos', JSON.stringify(todos));
 
-const createTodo = (todo: Todo) => {
-    const newLi = document.createElement('li');
-    const newCheckbox = document.createElement('input');
-    newCheckbox.type = 'checkbox';
-    newLi.append(todo.text);
-    newLi.append(newCheckbox);
-    list.append(newLi);
+    input.value = '';
 };
 
 form.addEventListener('submit', handleSubmit);

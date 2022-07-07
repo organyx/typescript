@@ -27,3 +27,12 @@ function identity<T>(item: T): T {
 
 identity<string>('Max');
 identity<number>(1);
+
+function getRandomElement<T>(list: T[]): T {
+    return list[Math.floor(Math.random() * list.length)];
+}
+
+getRandomElement<number>([1, 2, 3]);
+console.log('🚀 ~ file: index.ts ~ line 37 ~ getRandomElement([1, 2, 3]);', getRandomElement([1, 2, 3]));
+getRandomElement<string>(['a', 'b', 'c']);
+console.log("🚀 ~ file: index.ts ~ line 38 ~ getRandomElement(['a', 'b', 'c']);", getRandomElement(['a', 'b', 'c']));

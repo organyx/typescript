@@ -49,3 +49,20 @@ const player1 = new Player('John', 'Doe', 100);
 // player1.secretFunction();
 player1.fullName;
 player1.score = 33;
+class Car {
+    // color: string = 'red';
+    constructor(color) {
+        this.color = color;
+    }
+}
+const car1 = new Car('red');
+class Animal {
+    constructor(color, breed) {
+        this.color = color;
+        this.breed = breed;
+    }
+    print() {
+        console.log('print');
+    }
+}
+const animal1 = new Animal('red', 'labrador');

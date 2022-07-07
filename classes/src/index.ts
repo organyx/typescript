@@ -52,3 +52,27 @@ const player1 = new Player('John', 'Doe', 100);
 // player1.secretFunction();
 player1.fullName;
 player1.score = 33;
+
+interface Colorful {
+    color: string;
+}
+
+interface Printable {
+    print(): void;
+}
+
+class Car implements Colorful {
+    // color: string = 'red';
+    constructor(public color: string) {}
+}
+
+const car1 = new Car('red');
+
+class Animal implements Colorful, Printable {
+    constructor(public color: string, public breed: string) {}
+    print(): void {
+        console.log('print');
+    }
+}
+
+const animal1 = new Animal('red', 'labrador');

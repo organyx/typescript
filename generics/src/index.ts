@@ -12,3 +12,18 @@ inputEl.value = 'Max';
 
 const btnEl = document.querySelector<HTMLButtonElement>('.btn')!;
 btnEl.value = 'Click me 2';
+
+function numberIdentity(item: number): number {
+    return item;
+}
+
+function stringIdentity(item: string): string {
+    return item;
+}
+
+function identity<T>(item: T): T {
+    return item;
+}
+
+identity<string>('Max');
+identity<number>(1);

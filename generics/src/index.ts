@@ -67,3 +67,25 @@ function makeEmptyList<T = number>(): T[] {
 const numbers = makeEmptyList<number>();
 numbers.push(1);
 // numbers.push('2');
+
+interface Song {
+    title: string;
+    artist: string;
+}
+
+interface Video {
+    title: string;
+    creator: string;
+    resolution: string;
+}
+
+class Playlist<T> {
+    public queue: T[] = [];
+    add(item: T) {
+        this.queue.push(item);
+    }
+}
+
+const songs = new Playlist<Song>()
+
+const videos = new Playlist<Video>()

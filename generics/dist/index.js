@@ -44,4 +44,13 @@ function makeEmptyList() {
 }
 const numbers = makeEmptyList();
 numbers.push(1);
-// numbers.push('2');
+class Playlist {
+    constructor() {
+        this.queue = [];
+    }
+    add(item) {
+        this.queue.push(item);
+    }
+}
+const songs = new Playlist();
+const videos = new Playlist();

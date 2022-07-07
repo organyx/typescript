@@ -38,3 +38,10 @@ getRandomElement<string>(['a', 'b', 'c']);
 console.log("🚀 ~ file: index.ts ~ line 38 ~ getRandomElement(['a', 'b', 'c']);", getRandomElement(['a', 'b', 'c']));
 
 getRandomElement([1, 2, 3]);
+
+function merge<T, U>(object1: T, object2: U): T & U {
+    return { ...object1, ...object2 };
+}
+
+const mergeResult = merge({ name: 'Max' }, { age: 30 });
+console.log('🚀 ~ file: index.ts ~ line 47 ~ mergeResult', mergeResult);

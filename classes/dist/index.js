@@ -66,3 +66,35 @@ class Animal {
     }
 }
 const animal1 = new Animal('red', 'labrador');
+class Employee {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    greet() {
+        console.log('Hello');
+    }
+}
+class FullTimeEmployee extends Employee {
+    constructor(firstName, lastName, salary) {
+        super(firstName, lastName);
+        this.salary = salary;
+    }
+    getPay() {
+        return this.salary;
+    }
+}
+class PartTileEmployee extends Employee {
+    constructor(firstName, lastName, hourlyRate, hoursWorked) {
+        super(firstName, lastName);
+        this.hourlyRate = hourlyRate;
+        this.hoursWorked = hoursWorked;
+    }
+    getPay() {
+        return this.hourlyRate * this.hoursWorked;
+    }
+}
+const emp1 = new FullTimeEmployee('John', 'Doe', 100);
+console.log(emp1.getPay());
+const emp2 = new PartTileEmployee('Jane', 'Doe', 10, 40);
+console.log(emp2.getPay());

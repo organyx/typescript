@@ -76,3 +76,38 @@ class Animal implements Colorful, Printable {
 }
 
 const animal1 = new Animal('red', 'labrador');
+
+interface Payable {
+    getPay(): number;
+}
+
+abstract class Employee {
+    constructor(public firstName: string, public lastName: string) {}
+    abstract getPay(): number;
+    greet(): void {
+        console.log('Hello');
+    }
+}
+
+class FullTimeEmployee extends Employee {
+    constructor(firstName: string, lastName: string, private salary: number) {
+        super(firstName, lastName);
+    }
+    getPay(): number {
+        return this.salary;
+    }
+}
+
+class PartTileEmployee extends Employee {
+    constructor(firstName: string, lastName: string, private hourlyRate: number, private hoursWorked: number) {
+        super(firstName, lastName);
+    }
+    getPay(): number {
+        return this.hourlyRate * this.hoursWorked;
+    }
+}
+
+const emp1 = new FullTimeEmployee('John', 'Doe', 100);
+console.log(emp1.getPay());
+const emp2 = new PartTileEmployee('Jane', 'Doe', 10, 40);
+console.log(emp2.getPay());

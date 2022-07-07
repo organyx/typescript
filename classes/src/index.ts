@@ -16,7 +16,7 @@
 class Player {
     // private score: number = 0;
 
-    constructor(public first: string, public last: string, private _score: number) {}
+    constructor(public first: string, public last: string, protected _score: number) {}
 
     private secretFunction(): void {
         console.log('secret');
@@ -35,6 +35,14 @@ class Player {
             throw new Error('Score cannot be negative');
         }
         this._score = newScore;
+    }
+}
+
+class SudoPlayer extends Player {
+    public isAdmin: boolean = true;
+
+    maxScore() {
+        this._score = 9999;
     }
 }
 

@@ -34,6 +34,15 @@ class Player {
         this._score = newScore;
     }
 }
+class SudoPlayer extends Player {
+    constructor() {
+        super(...arguments);
+        this.isAdmin = true;
+    }
+    maxScore() {
+        this._score = 9999;
+    }
+}
 const player1 = new Player('John', 'Doe', 100);
 // player1.first = 'Jane';
 // player1.score = '313';

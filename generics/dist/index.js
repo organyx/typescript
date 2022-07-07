@@ -39,3 +39,9 @@ function printDoubleLength(input) {
 }
 printDoubleLength('Max');
 // printDoubleLength(2);
+function makeEmptyList() {
+    return [];
+}
+const numbers = makeEmptyList();
+numbers.push(1);
+// numbers.push('2');

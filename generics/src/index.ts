@@ -59,3 +59,11 @@ function printDoubleLength<T extends Lengthy>(input: T): number {
 
 printDoubleLength('Max');
 // printDoubleLength(2);
+
+function makeEmptyList<T = number>(): T[] {
+    return [];
+}
+
+const numbers = makeEmptyList<number>();
+numbers.push(1);
+// numbers.push('2');

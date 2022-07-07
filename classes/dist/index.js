@@ -12,16 +12,31 @@
 //     }
 // }
 class Player {
-    constructor(first, last) {
+    // private score: number = 0;
+    constructor(first, last, _score) {
         this.first = first;
         this.last = last;
-        this.score = 0;
+        this._score = _score;
     }
     secretFunction() {
         console.log('secret');
     }
+    get fullName() {
+        return `${this.first} ${this.last}`;
+    }
+    get score() {
+        return this._score;
+    }
+    set score(newScore) {
+        if (newScore < 0) {
+            throw new Error('Score cannot be negative');
+        }
+        this._score = newScore;
+    }
 }
-const player1 = new Player('John', 'Doe');
+const player1 = new Player('John', 'Doe', 100);
 // player1.first = 'Jane';
 // player1.score = '313';
 // player1.secretFunction();
+player1.fullName;
+player1.score = 33;

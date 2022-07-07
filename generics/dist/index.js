@@ -26,3 +26,4 @@ getRandomElement([1, 2, 3]);
 console.log('🚀 ~ file: index.ts ~ line 37 ~ getRandomElement([1, 2, 3]);', getRandomElement([1, 2, 3]));
 getRandomElement(['a', 'b', 'c']);
 console.log("🚀 ~ file: index.ts ~ line 38 ~ getRandomElement(['a', 'b', 'c']);", getRandomElement(['a', 'b', 'c']));
+getRandomElement([1, 2, 3]);

@@ -39,9 +39,23 @@ console.log("🚀 ~ file: index.ts ~ line 38 ~ getRandomElement(['a', 'b', 'c'])
 
 getRandomElement([1, 2, 3]);
 
-function merge<T, U>(object1: T, object2: U): T & U {
+function merge<T extends object, U extends object>(object1: T, object2: U): T & U {
     return { ...object1, ...object2 };
 }
 
 const mergeResult = merge({ name: 'Max' }, { age: 30 });
 console.log('🚀 ~ file: index.ts ~ line 47 ~ mergeResult', mergeResult);
+
+// merge({ name: 'Max' }, 30);
+merge({ name: 'Max' }, { age: 30 });
+
+interface Lengthy {
+    length: number;
+}
+
+function printDoubleLength<T extends Lengthy>(input: T): number {
+    return input.length * 2;
+}
+
+printDoubleLength('Max');
+// printDoubleLength(2);

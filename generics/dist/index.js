@@ -32,3 +32,10 @@ function merge(object1, object2) {
 }
 const mergeResult = merge({ name: 'Max' }, { age: 30 });
 console.log('🚀 ~ file: index.ts ~ line 47 ~ mergeResult', mergeResult);
+// merge({ name: 'Max' }, 30);
+merge({ name: 'Max' }, { age: 30 });
+function printDoubleLength(input) {
+    return input.length * 2;
+}
+printDoubleLength('Max');
+// printDoubleLength(2);

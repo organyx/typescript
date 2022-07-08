@@ -25,3 +25,11 @@ const printLetters = (word) => {
         console.log('no word');
     }
 };
+function someDemo(x, y) {
+    if (x === y) {
+        x.toLocaleLowerCase();
+    }
+}
+// someDemo('a', 'b');
+// someDemo(1, true);
+// someDemo(3, '3');

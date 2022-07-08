@@ -24,3 +24,13 @@ const printLetters = (word?: string) => {
         console.log('no word');
     }
 };
+
+function someDemo(x: string | number, y: string | boolean) {
+    if (x === y) {
+        x.toLocaleLowerCase()
+    }
+}
+
+// someDemo('a', 'b');
+// someDemo(1, true);
+// someDemo(3, '3');

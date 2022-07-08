@@ -27,7 +27,7 @@ const printLetters = (word?: string) => {
 
 function someDemo(x: string | number, y: string | boolean) {
     if (x === y) {
-        x.toLocaleLowerCase()
+        x.toLocaleLowerCase();
     }
 }
 
@@ -47,11 +47,35 @@ interface TvShow {
 }
 
 function getRunTime(piece: Movie | TvShow) {
-    if('duration' in piece) {
+    if ('duration' in piece) {
         return piece.duration;
     }
     return piece.numberOfEpisodes * piece.episodeDuration;
 }
 
-getRunTime({title: 'The Office', numberOfEpisodes: 12, episodeDuration: 30});
-getRunTime({title: 'The Office Movie', duration: 30});
+getRunTime({ title: 'The Office', numberOfEpisodes: 12, episodeDuration: 30 });
+getRunTime({ title: 'The Office Movie', duration: 30 });
+
+function printFullDate(date: string | Date) {
+    if (date instanceof Date) {
+        console.log(date.toUTCString());
+    } else {
+        new Date(date).toUTCString()
+    }
+}
+
+class User {
+    constructor(public username: string) {}
+}
+
+class Company {
+    constructor(public name: string) {}
+}
+
+function printName(entity: User | Company) {
+    if(entity instanceof User) {
+        entity
+    } else {
+        entity
+    }
+}

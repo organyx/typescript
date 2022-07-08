@@ -38,3 +38,29 @@ function getRunTime(piece) {
 }
 getRunTime({ title: 'The Office', numberOfEpisodes: 12, episodeDuration: 30 });
 getRunTime({ title: 'The Office Movie', duration: 30 });
+function printFullDate(date) {
+    if (date instanceof Date) {
+        console.log(date.toUTCString());
+    }
+    else {
+        new Date(date).toUTCString();
+    }
+}
+class User {
+    constructor(username) {
+        this.username = username;
+    }
+}
+class Company {
+    constructor(name) {
+        this.name = name;
+    }
+}
+function printName(entity) {
+    if (entity instanceof User) {
+        entity;
+    }
+    else {
+        entity;
+    }
+}

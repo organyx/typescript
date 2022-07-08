@@ -75,3 +75,20 @@ function makeSound(animal) {
     animal;
     return 'woof';
 }
+function getAnimalSound(animal) {
+    switch (animal.kind) {
+        case 'rooster':
+            return 'Rooster sound';
+        case 'cow':
+            return 'Moo';
+        case 'pig':
+            return 'Oink';
+    }
+}
+const bob = {
+    name: 'Bob',
+    weight: 100,
+    age: 2,
+    kind: 'rooster'
+};
+getAnimalSound(bob);

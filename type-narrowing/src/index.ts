@@ -104,3 +104,50 @@ function makeSound(animal: Cat | Dog): string {
     animal;
     return 'woof';
 }
+
+// Discriminated unions
+
+interface Rooster {
+    name: string;
+    weight: number;
+    age: number;
+    kind: 'rooster';
+}
+
+interface Cow {
+    name: string;
+    weight: number;
+    age: number;
+    kind: 'cow';
+}
+
+interface Pig {
+    name: string;
+    weight: number;
+    age: number;
+    kind: 'pig';
+}
+
+type FarmAnimal = Rooster | Cow | Pig;
+
+function getAnimalSound(animal: FarmAnimal) {
+    switch (animal.kind) {
+        case 'rooster':
+            return 'Rooster sound';
+
+        case 'cow':
+            return 'Moo';
+
+        case 'pig':
+            return 'Oink';
+    }
+}
+
+const bob: Rooster = {
+    name: 'Bob',
+    weight: 100,
+    age: 2,
+    kind: 'rooster'
+};
+
+getAnimalSound(bob);

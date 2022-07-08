@@ -1,4 +1,4 @@
-import { add, sample } from './utils';
+import { add, sample } from './utils.js';
 
 console.log('Hello World');
 

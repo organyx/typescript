@@ -15,3 +15,13 @@ if (el) {
 else {
     // el.
 }
+const printLetters = (word) => {
+    if (word) {
+        for (const letter of word) {
+            console.log(letter);
+        }
+    }
+    else {
+        console.log('no word');
+    }
+};

@@ -34,3 +34,24 @@ function someDemo(x: string | number, y: string | boolean) {
 // someDemo('a', 'b');
 // someDemo(1, true);
 // someDemo(3, '3');
+
+interface Movie {
+    title: string;
+    duration: number;
+}
+
+interface TvShow {
+    title: string;
+    numberOfEpisodes: number;
+    episodeDuration: number;
+}
+
+function getRunTime(piece: Movie | TvShow) {
+    if('duration' in piece) {
+        return piece.duration;
+    }
+    return piece.numberOfEpisodes * piece.episodeDuration;
+}
+
+getRunTime({title: 'The Office', numberOfEpisodes: 12, episodeDuration: 30});
+getRunTime({title: 'The Office Movie', duration: 30});

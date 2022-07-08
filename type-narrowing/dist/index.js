@@ -30,6 +30,11 @@ function someDemo(x, y) {
         x.toLocaleLowerCase();
     }
 }
-// someDemo('a', 'b');
-// someDemo(1, true);
-// someDemo(3, '3');
+function getRunTime(piece) {
+    if ('duration' in piece) {
+        return piece.duration;
+    }
+    return piece.numberOfEpisodes * piece.episodeDuration;
+}
+getRunTime({ title: 'The Office', numberOfEpisodes: 12, episodeDuration: 30 });
+getRunTime({ title: 'The Office Movie', duration: 30 });

@@ -64,3 +64,14 @@ function printName(entity) {
         entity;
     }
 }
+function isCat(animal) {
+    return animal.numberOfLives !== undefined;
+}
+function makeSound(animal) {
+    if (isCat(animal)) {
+        animal;
+        return 'meow';
+    }
+    animal;
+    return 'woof';
+}

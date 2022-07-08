@@ -60,7 +60,7 @@ function printFullDate(date: string | Date) {
     if (date instanceof Date) {
         console.log(date.toUTCString());
     } else {
-        new Date(date).toUTCString()
+        new Date(date).toUTCString();
     }
 }
 
@@ -73,9 +73,34 @@ class Company {
 }
 
 function printName(entity: User | Company) {
-    if(entity instanceof User) {
-        entity
+    if (entity instanceof User) {
+        entity;
     } else {
-        entity
+        entity;
     }
+}
+
+// Type predicates
+
+interface Cat {
+    name: string;
+    numberOfLives: number;
+}
+
+interface Dog {
+    name: string;
+    breed: string;
+}
+
+function isCat(animal: Cat | Dog): animal is Cat {
+    return (animal as Cat).numberOfLives !== undefined;
+}
+
+function makeSound(animal: Cat | Dog): string {
+    if (isCat(animal)) {
+        animal;
+        return 'meow';
+    }
+    animal;
+    return 'woof';
 }

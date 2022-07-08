@@ -83,6 +83,14 @@ function getAnimalSound(animal) {
             return 'Moo';
         case 'pig':
             return 'Oink';
+        case 'sheep':
+            return 'Baa';
+        default:
+            // Should never happen
+            // const shouldNeverHappen: never = animal;
+            // return shouldNeverHappen;
+            const _exhaustiveCheck = animal;
+            return _exhaustiveCheck;
     }
 }
 const bob = {

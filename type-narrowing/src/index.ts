@@ -128,7 +128,14 @@ interface Pig {
     kind: 'pig';
 }
 
-type FarmAnimal = Rooster | Cow | Pig;
+interface Sheep {
+    name: string;
+    weight: number;
+    age: number;
+    kind: 'sheep';
+}
+
+type FarmAnimal = Rooster | Cow | Pig | Sheep;
 
 function getAnimalSound(animal: FarmAnimal) {
     switch (animal.kind) {
@@ -140,6 +147,16 @@ function getAnimalSound(animal: FarmAnimal) {
 
         case 'pig':
             return 'Oink';
+
+        case 'sheep':
+            return 'Baa';
+
+        default:
+            // Should never happen
+            // const shouldNeverHappen: never = animal;
+            // return shouldNeverHappen;
+            const _exhaustiveCheck: never = animal;
+            return _exhaustiveCheck;
     }
 }
 

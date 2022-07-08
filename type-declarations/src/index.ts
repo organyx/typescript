@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import _ from 'lodash';
 // axios
 
 const baseUrl = 'https://jsonplaceholder.typicode.com';
@@ -60,3 +60,6 @@ axios
     .catch(error => {
         console.error(error);
     });
+
+
+    _.sample()

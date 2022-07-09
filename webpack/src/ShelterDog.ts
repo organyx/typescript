@@ -1,4 +1,4 @@
-import Dog from "./Dog";
+import Dog from "./Dog.js";
 
 export default class ShelterDog extends Dog {
   constructor(
